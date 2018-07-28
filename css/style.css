@@ -1,0 +1,15 @@
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+.carousel .carousel-item {
+  height: 400px;
+}
+
+.carousel-item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-height: 400px;
+}
