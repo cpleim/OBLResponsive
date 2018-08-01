@@ -1,0 +1,26 @@
+<--Guia de desarrollo-->
+
+|--Etiquetas HTML--|
+* <meta> -> Etiqueta para metadatos (datos de datos). Usada para la descripcion de la pagina, palabras claves, autores, etc.
+* <link> -> Etiqueta para linkear recursos externos con la pagina en si
+* <a> -> Etiqueta de hiperlinks. Usada para añadir links en el documento. "<a href="url">link text</a>"
+* <nav> -> Define un set de links de navegacion
+* <span> -> Usada para agrupar elementos inline en el documento
+* <ul> -> Crea una "unordered list", es usada junto a la etiqueta "li"
+* <li> -> Usada para crear listas dentro de la etiqueta "ul"
+* <i> -> Comunmente usada para dar "otra voz" a un texto en un documento. (en este caso es mayormente usado por FontAwesome de la manera <i class="fa fa-download mr-1"></i>)
+* <ol> -> "Ordered List", hace lo mismo que "ul" pero es una lista ordenada.
+* <h1> -> Headers
+* <p> -> Parrafos
+* <hr> -> "Horizontal Ruler" Define un quiebre tematico en el documento, por ejemplo, un cambio en el tema del que se esta hablando, es usado para separar contenido.
+* <footer> -> Pie de pagina
+
+
+|--Clases Bootstrap--|
+* sm -> "Small Medium"
+* lg -> "Large"
+* bg -> "Background"
+* mr -> "Mobile Responisve"
+
+* navbar -> 
+* mr-num -> Ajusta el espaciado de un elemento con respecto a otro

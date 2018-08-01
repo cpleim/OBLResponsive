@@ -24,4 +24,11 @@
     min-height: 400px;
 }
 
-font-family: 'Raleway', sans-serif;
+/*
+*Para quitar las flechitas de seleccion de numero
+*/
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
