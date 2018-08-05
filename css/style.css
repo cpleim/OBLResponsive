@@ -1,34 +1,41 @@
 /*
-*Para hacer que las imagenes sean responsive
-*/
-.img-fluid {
-  max-width: 100%;
-  height: auto;
-}
+ *Para hacer que las imagenes sean responsive
+ */
+.img - fluid {
+    max - width: 100 % ;
+    height: auto;
+  }
 
-/*
-*Ajusta el tamaño del Carousel
-*/
-.carousel .carousel-item {
-  height: 400px;
-}
+  /*
+   *Ajusta el tamaño del Carousel
+   */
+  .carousel.carousel - item {
+    height: 400 px;
+  }
 
 
-/*
-*Ajusta el tamaño de las imagenes dentro del Carousel
-*/
-.carousel-item img {
+  /*
+   *Ajusta el tamaño de las imagenes dentro del Carousel
+   */
+  .carousel - item img {
     position: absolute;
     top: 0;
     left: 0;
-    min-height: 400px;
-}
+    min - height: 400 px;
+  }
 
 /*
-*Para quitar las flechitas de seleccion de numero
-*/
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
-  -webkit-appearance: none; 
-  margin: 0; 
+ *Para quitar las flechitas de seleccion de numero
+ */
+input[type = number]::-webkit - inner - spin - button,
+  input[type = number]::-webkit - outer - spin - button {
+    -webkit - appearance: none;
+    margin: 0;
+  }
+
+/*
+ *Cuando se muestra un error en un campo, se colorea en rojo
+ */
+label.error {
+  color: red;
 }
