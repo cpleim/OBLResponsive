@@ -44,7 +44,7 @@
     <!--Se define el "nombre" de la navbar-->
     <a class="navbar-brand" href="#"></a>
     <!--Logo+Texto-->
-    <img src="assets/img/zntico.png" width="30" height="30" class="d-inline-block align-top mr-2" alt="Zennet Soluciones Informaticas">Zennet Soluciones Informaticas
+    <a href="index.html"><img src="assets/img/zntico.png" width="30" height="30" class="d-inline-block align-top mr-2" alt="Zennet Soluciones Informaticas"></a>Zennet Soluciones Informaticas
     </a>
     <!--Botón para mostrar/ocultar la navbar en mobile-->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -100,11 +100,6 @@
             </a>
         </li>
       </ul>
-      <!--Barra de busqueda, inutil por ahora...-->
-      <!--<form class="form-inline my-2 my-lg-0">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                    </form>-->
     </div>
   </nav>
   <!-- Button trigger modal -->
@@ -151,7 +146,7 @@
           <div class="card">
             <div class="card-header p-2">
               <div class="container text-center">
-                <h5>Datos Personales</h5>
+                <p class="lead">Datos Personales</p>
               </div>
             </div>
             <div class="row form-group p-3">
@@ -186,6 +181,7 @@
                 <label for="dateBirth">Fecha de nacimiento</label>
                 <input class="form-control" id="datepicker" name="fechanac">
                 <script>
+                  //Debe estar dentro de una etiqueta <script> dentro del HTML, así lo requiere la librería.
                   $('#datepicker').datepicker({
                     uiLibrary: 'bootstrap4',
                     format: 'dd/mm/yyyy',
@@ -227,7 +223,7 @@
           <div class="card">
             <div class="card-header p-2">
               <div class="container text-center">
-                <h5>A dónde debemos enviar tu pedido?</h5>
+                <p class="lead">A dónde debemos enviar tu pedido?</p>
               </div>
             </div>
             <div class="card-body card-block">
@@ -277,7 +273,6 @@
                 </div>
               </div>
               <!--Fuera o dentro de Ciudad-->
-
               <div class="container text-center col col-md-9">
                 <div class="form-check">
                   <div class="radio">
@@ -292,7 +287,6 @@
                   </div>
                 </div>
               </div>
-
             </div>
           </div>
         </div>
@@ -309,7 +303,7 @@
   <!--Fin container-->
   </form>
   <!--Fin Form-->
-  <hr class="featurette-divider">
+  <hr class="feature-divider">
   <!--FIN INTERPAGE-->
   </div>
   <footer>
@@ -319,5 +313,4 @@
     </div>
   </footer>
 </body>
-
 </html>
