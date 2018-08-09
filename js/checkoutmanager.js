@@ -1,7 +1,20 @@
 //jQuery Validator custom rules
+
+//Validacion RUT - CI
 jQuery.validator.addMethod("RangeCiRUT", function(value, element) {
   return ProbarCon();
 });
+
+//Validacion formato de fecha
+jQuery.validator.addMethod("FormatoDate", function(value, element) {
+  return checkFormato();
+});
+
+//Validacion edad
+jQuery.validator.addMethod("CheckEdad", function(value, element) {
+ return isMayor();
+});
+
 
 //Rules jQuery Validator
 $(function() {
@@ -21,7 +34,9 @@ $(function() {
         required: true
       },
       fechanac: {
-        required: true
+        required: true,
+        FormatoDate: true,
+        CheckEdad: true
       },
       rutoci: {
         required: true,
@@ -45,7 +60,9 @@ $(function() {
         required: "El telefono es requerido"
       },
       fechanac: {
-        required: "La fecha de nacimiento es requerida"
+        required: "La fecha de nacimiento es requerida",
+        FormatoDate: "Formato de fecha invalido.",
+        CheckEdad: "Debes ser mayor de 18 para poder realizar la compra"
       },
       rutoci: {
         required: "El RUT o la CI es requerida",
@@ -61,6 +78,17 @@ $(function() {
   });
 });
 
+function checkFormato() {
+  var result = false
+  var fechaBirth = document.getElementById("datepicker").value;
+  var verif = moment(fechaBirth, 'DD/MM/YYYY', true).isValid();
+  if (verif == false) {
+    return false;
+  } else {
+    return true;
+  }
+}
+
 function checkEdad() {
   var esMayor = false;
 
@@ -69,8 +97,10 @@ function checkEdad() {
   var diaActual = new Date().getDate();
 
   var fechaBirth = document.getElementById("datepicker").value;
-  var fechaSplit = fechaBirth.split('/');
 
+  var verif = moment(fechaBirth, 'DD/MM/YYYY', true).isValid();
+
+  var fechaSplit = fechaBirth.split('/');
 
   var edad = anioActual - fechaSplit[2];
 
@@ -85,7 +115,7 @@ function checkEdad() {
     if (edad >= 18) {
       esMayor = true;
       console.log(esMayor + ", edad: " + edad);
-      return;
+      return true;
     }
   }
 
@@ -93,12 +123,12 @@ function checkEdad() {
     if (edad >= 18) {
       esMayor = true;
       console.log(esMayor + ", edad: " + edad);
-      return;
+      return true;
     } else {
       edad = edad;
       esMayor = false;
       console.log(esMayor + ", edad: " + edad);
-      return;
+      return false;
     }
   }
 
@@ -110,7 +140,7 @@ function checkEdad() {
         edad = edad - 1;
         esMayor = false;
         console.log(esMayor + ", edad: " + edad);
-        return;
+        return false;
       }
     }
     if (diaActual > fechaSplit[0]) {
@@ -119,27 +149,34 @@ function checkEdad() {
       } else {
         esMayor = false;
         console.log(esMayor + ", edad: " + edad);
-        return;
+        return false;
       }
 
     }
     if (diaActual = fechaSplit[0]) {
       if (edad > 18) {
         esMayor = true;
-        return
+        return true;
       }
       if (edad < 18) {
         esMayor = false;
         console.log(esMayor + ", edad: " + edad);
-        return;
+        return false;
       }
       if (esMayor == false) {
         console.log(esMayor + ", edad: " + edad + ". Nació el " + fechaBirth + ", cumple el " + diaActual + "/" + mesActual + "/" + anioActual + ". Prorroga: dia cumpleaños + 1.");
-        alert("Feliz cumpleaños!\nPor cuestiones de seguridad, nuestro sistema solicita que haya pasado al menos un dia luego de haber cumplido la mayoría de edad.\nPorfavor vuelve a intentar tu compra mañana.")
-        return;
+        document.getElementById("msgSys").innerText = "Por cuestiones de seguridad, nuestro sistema solicita que haya pasado al menos un dia luego de haber cumplido la mayoría de edad.\nPorfavor vuelve a intentar tu compra mañana."
+        document.getElementById("alertMsg").style.display = "block";
+        return false;
       }
     }
   }
+}
+
+function isMayor() {
+  var yaMayor = false;
+  yaMayor = checkEdad();
+  return yaMayor;
 }
 
 function ProbarCon() {
@@ -286,6 +323,11 @@ $(document).ready(function() {
   $('input[name=rutoci]').tooltip({
     'trigger': 'focus',
     'title': 'Ej: 50098253'
+  });
+
+  $('input[name=fechanac]').tooltip({
+    'trigger': 'focus',
+    'title': 'Ej: 24/09/1999'
   });
 
 });

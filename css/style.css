@@ -14,9 +14,9 @@
   }
 
 
-  /*
-   *Ajusta el tamaño de las imagenes dentro del Carousel
-   */
+ /*
+  *Ajusta el tamaño de las imagenes dentro del Carousel
+  */
   .carousel - item img {
     position: absolute;
     top: 0;
