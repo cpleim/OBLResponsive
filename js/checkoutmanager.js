@@ -61,15 +61,94 @@ $(function() {
   });
 });
 
+function checkEdad() {
+  var esMayor = false;
+
+  var anioActual = new Date().getFullYear();
+  var mesActual = new Date().getMonth() + 1;
+  var diaActual = new Date().getDate();
+
+  var fechaBirth = document.getElementById("datepicker").value;
+  var fechaSplit = fechaBirth.split('/');
+
+
+  var edad = anioActual - fechaSplit[2];
+
+  /*
+   *fechaSplit[0] -> Dia de nacimiento
+   *fechaSplit[1] -> Mes de nacimiento
+   *fechaSplit[2] -> Año de nacimiento
+   */
+
+  if (mesActual < fechaSplit[1]) {
+    edad = edad - 1;
+    if (edad >= 18) {
+      esMayor = true;
+      console.log(esMayor + ", edad: " + edad);
+      return;
+    }
+  }
+
+  if (mesActual > fechaSplit[1]) {
+    if (edad >= 18) {
+      esMayor = true;
+      console.log(esMayor + ", edad: " + edad);
+      return;
+    } else {
+      edad = edad;
+      esMayor = false;
+      console.log(esMayor + ", edad: " + edad);
+      return;
+    }
+  }
+
+  if (mesActual = fechaSplit[1]) {
+    if (diaActual < fechaSplit[0]) {
+      if (edad >= 18) {
+        esMayor = true;
+      } else {
+        edad = edad - 1;
+        esMayor = false;
+        console.log(esMayor + ", edad: " + edad);
+        return;
+      }
+    }
+    if (diaActual > fechaSplit[0]) {
+      if (edad >= 18) {
+        esMayor = true;
+      } else {
+        esMayor = false;
+        console.log(esMayor + ", edad: " + edad);
+        return;
+      }
+
+    }
+    if (diaActual = fechaSplit[0]) {
+      if (edad > 18) {
+        esMayor = true;
+        return
+      }
+      if (edad < 18) {
+        esMayor = false;
+        console.log(esMayor + ", edad: " + edad);
+        return;
+      }
+      if (esMayor == false) {
+        console.log(esMayor + ", edad: " + edad + ". Nació el " + fechaBirth + ", cumple el " + diaActual + "/" + mesActual + "/" + anioActual + ". Prorroga: dia cumpleaños + 1.");
+        alert("Feliz cumpleaños!\nPor cuestiones de seguridad, nuestro sistema solicita que haya pasado al menos un dia luego de haber cumplido la mayoría de edad.\nPorfavor vuelve a intentar tu compra mañana.")
+        return;
+      }
+    }
+  }
+}
+
 function ProbarCon() {
   var result = false;
   var rutCI = document.getElementById("rut-ci").value;
   var SelectRutCi = document.getElementById("SelectRutCi").selectedIndex;
   if (SelectRutCi == 0) {
-    console.log("Parece que lo ingresado es una CI. Continuando...");
     result = ValidarCI(rutCI);
   } else if (SelectRutCi == 1) {
-    console.log("Parece que lo ingresado es un RUT. Continuando...");
     result = ValidarRUT(rutCI);
   }
   return result;

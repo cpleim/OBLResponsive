@@ -1,316 +1,323 @@
 <!doctype html>
 <html lang="es">
-
-<head>
-  <!-- Codificacion -->
-  <meta charset="utf-8">
-  <!-- Para que se adapte en mobile -->
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-  <!-- FontAwesome CSS -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
-  <!-- Local CSS -->
-  <link rel="stylesheet" href="css/style.css">
-  <!--JQuery-->
-  <script src="https://code.jquery.com/jquery-3.3.1.js">
-  </script>
-  <!--Popper-->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js">
-  </script>
-  <!--Bootstrap-->
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js">
-  </script>
-  <!--Gijo Datepicker-->
-  <script src="https://cdn.jsdelivr.net/npm/gijgo@1.9.10/js/gijgo.min.js" type="text/javascript">
-  </script>
-  <!--Gijo CSS-->
-  <link href="https://cdn.jsdelivr.net/npm/gijgo@1.9.10/css/gijgo.min.css" rel="stylesheet" type="text/css" />
-  <!--jQuery Validation-->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js">
-  </script>
-  <!--Checkout Manager-->
-  <script type="text/javascript" src="js/checkoutmanager.js">
-  </script>
-  <!--Icono-->
-  <link rel="icon" href="assets/img/zntico.png">
-  <!--Titulo-->
-  <title>Checkout</title>
-</head>
-
-<body>
-  <!--NAVBAR MENU-->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <!--Se define el "nombre" de la navbar-->
-    <a class="navbar-brand" href="#"></a>
-    <!--Logo+Texto-->
-    <a href="index.html"><img src="assets/img/zntico.png" width="30" height="30" class="d-inline-block align-top mr-2" alt="Zennet Soluciones Informaticas"></a>Zennet Soluciones Informaticas
+  <head>
+    <!-- Codificacion -->
+    <meta charset="utf-8">
+    <!-- Para que se adapte en mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <!-- FontAwesome CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+    <!-- Local CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!--JQuery-->
+    <script src="https://code.jquery.com/jquery-3.3.1.js">
+    </script>
+    <!--Popper-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js">
+    </script>
+    <!--Bootstrap-->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js">
+    </script>
+    <!--Gijo Datepicker-->
+    <script src="https://cdn.jsdelivr.net/npm/gijgo@1.9.10/js/gijgo.min.js" type="text/javascript">
+    </script>
+    <!--Gijo CSS-->
+    <link href="https://cdn.jsdelivr.net/npm/gijgo@1.9.10/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+    <!--jQuery Validation-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js">
+    </script>
+    <!--Checkout Manager-->
+    <script type="text/javascript" src="js/checkoutmanager.js">
+    </script>
+    <!--Icono-->
+    <link rel="icon" href="assets/img/zntico.png">
+    <!--Titulo-->
+    <title>Checkout</title>
+  </head>
+  <body>
+    <!--NAVBAR MENU-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <!--Se define el "nombre" de la navbar-->
+      <a class="navbar-brand" href="#"></a>
+      <!--Logo+Texto-->
+      <a href="index.html"><img src="assets/img/zntico.png" width="30" height="30" class="d-inline-block align-top mr-2" alt="Zennet Soluciones Informaticas"></a>Zennet Soluciones Informaticas
     </a>
     <!--Botón para mostrar/ocultar la navbar en mobile-->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+    <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
           <a class="nav-link" href="#">
             <!--Inicio--><span class="sr-only">Inicio</span></a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="fa fa-hand-holding mr-1"></i>Servicios
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">
-              <i class="fa fa-wrench mr-1"></i>
-              Reparación de equipos
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="fa fa-hand-holding mr-1"></i>Servicios
             </a>
-            <a class="dropdown-item" href="#">
-              <i class="fa fa-download mr-1"></i>
-              Recuperación de datos
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">
+                <i class="fa fa-wrench mr-1"></i>
+                Reparación de equipos
+              </a>
+              <a class="dropdown-item" href="#">
+                <i class="fa fa-download mr-1"></i>
+                Recuperación de datos
+              </a>
+              <a class="dropdown-item" href="#">
+                <i class="fa fa-cogs mr-1"></i>
+                Equipamiento a medida
+              </a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">
+                <i class="fa fa-shopping-cart mr-3"></i>
+                Tienda (new!)
+              </a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Substrarum Engine</a>
+              <a class="dropdown-item" href="#"></i>Zennet Cloud</a>
+              <a class="dropdown-item" href="#">zData</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="fa fa-link mr-2"></i>Links
             </a>
-            <a class="dropdown-item" href="#">
-              <i class="fa fa-cogs mr-1"></i>
-              Equipamiento a medida
-            </a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">
-              <i class="fa fa-shopping-cart mr-3"></i>
-              Tienda (new!)
-            </a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Substrarum Engine</a>
-            <a class="dropdown-item" href="#"></i>Zennet Cloud</a>
-            <a class="dropdown-item" href="#">zData</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">
+                <i class="fa fa-user mr-1"></i>
+                Tu Cuenta
+              </a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">
+                <i class="fa fa-question-circle mr-1"></i>
+                Ayuda
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <!-- Button trigger modal -->
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+      test modal
+      </button>
+      <!-- Button trigger edad -->
+      <button type="button" class="btn btn-primary" onclick="checkEdad()">
+      check edad
+      </button>
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Atención</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              ...
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Continuar</button>
+              <button type="button" class="btn btn-primary">Cancelar</button>
+            </div>
           </div>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="fa fa-link mr-2"></i>Links
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">
-              <i class="fa fa-user mr-1"></i>
-              Tu Cuenta
-            </a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">
-              <i class="fa fa-question-circle mr-1"></i>
-              Ayuda
-            </a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-  <!-- Button trigger modal -->
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-    test modal
-  </button>
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Atención</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          ...
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Continuar</button>
-          <button type="button" class="btn btn-primary">Cancelar</button>
         </div>
       </div>
-    </div>
-  </div>
-  <div id="msgDiv" class="alert alert-danger alert-dismissible fade show" role="alert" style="display:none;">
-    <a id="msgSys"></a>
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-  <!--INTERPAGE-->
-  <div class="container">
-    <div class="py-3 text-center">
-      <img class="d-block mx-auto md-4" src="assets/img/zntico.png" width="72" height="72">
-      <h2>Formulario de pago</h2>
-      <p class="lead">Antes de terminar la compra, por favor completa todos los datos solicitados.</p>
-    </div>
-    <form name="FormCheckout">
-      <div class="col-12 col-md-8 offset-md-2 col-lg-6 offset-lg-3 row">
-        <!--Nombre-->
-        <div class="col-12">
-          <div class="card">
-            <div class="card-header p-2">
-              <div class="container text-center">
-                <p class="lead">Datos Personales</p>
-              </div>
-            </div>
-            <div class="row form-group p-3">
-              <div class="col col-md-6">
-                <label for="nombre">Nombre</label>
-                <div class="input-group">
-                  <span class="input-group-text"><i class="fa fa-user fa-lg" aria-hidden="true"></i></span>
-                  <input class="form-control" name="nombre" placeholder="Ingrese su nombre" alt="Nombre">
-                </div>
-              </div>
-              <div class="col col-md-6">
-                <label for="apellido">Apellido</label>
-                <div class="input-group">
-                  <span class="input-group-text"><i class="fa fa-user fa-lg" aria-hidden="true"></i></span>
-                  <input class="form-control" name="apellido" placeholder="Ingrese su apellido" alt="Apellido">
-                </div>
-              </div>
-            </div>
-            <!--Telefono-->
+      <!--INTERPAGE-->
+      <div class="container">
+        <div class="py-3 text-center">
+          <img class="d-block mx-auto md-4" src="assets/img/zntico.png" width="72" height="72">
+          <h2>Formulario de pago</h2>
+          <p class="lead">Antes de terminar la compra, por favor completa todos los datos solicitados.</p>
+        </div>
+        <form name="FormCheckout">
+          <div class="col-12 col-md-8 offset-md-2 col-lg-6 offset-lg-3 row">
+            <!--Nombre-->
             <div class="col-12">
-              <div class="form-group">
-                <label for="tel">Teléfono o Celular</label>
-                <div class="input-group">
-                  <span class="input-group-text"><i class="fa fa-phone fa-lg" aria-hidden="true"></i></span>
-                  <input class="form-control" name="tel" alt="Telefono o Celular" placeholder="Ingrese su telefono o su Celular">
+              <div class="card">
+                <div class="card-header p-2">
+                  <div class="container text-center">
+                    <p class="lead">Datos Personales</p>
+                  </div>
                 </div>
-              </div>
-            </div>
-            <!--Fecha de nacimiento-->
-            <div class="col-12">
-              <div class="form-group">
-                <label for="dateBirth">Fecha de nacimiento</label>
-                <input class="form-control" id="datepicker" name="fechanac">
-                <script>
-                  //Debe estar dentro de una etiqueta <script> dentro del HTML, así lo requiere la librería.
-                  $('#datepicker').datepicker({
+                <div class="row form-group p-3">
+                  <div class="col col-md-6">
+                    <label for="nombre">Nombre</label>
+                    <div class="input-group">
+                      <span class="input-group-text"><i class="fa fa-user fa-lg" aria-hidden="true"></i></span>
+                      <input class="form-control" name="nombre" placeholder="Ingrese su nombre" alt="Nombre">
+                    </div>
+                  </div>
+                  <div class="col col-md-6">
+                    <label for="apellido">Apellido</label>
+                    <div class="input-group">
+                      <span class="input-group-text"><i class="fa fa-user fa-lg" aria-hidden="true"></i></span>
+                      <input class="form-control" name="apellido" placeholder="Ingrese su apellido" alt="Apellido">
+                    </div>
+                  </div>
+                </div>
+                <!--Telefono-->
+                <div class="col-12">
+                  <div class="form-group">
+                    <label for="tel">Teléfono o Celular</label>
+                    <div class="input-group">
+                      <span class="input-group-text"><i class="fa fa-phone fa-lg" aria-hidden="true"></i></span>
+                      <input class="form-control" name="tel" alt="Telefono o Celular" placeholder="Ingrese su telefono o su Celular">
+                    </div>
+                  </div>
+                </div>
+                <!--Fecha de nacimiento-->
+                <div class="col-12">
+                  <div class="form-group">
+                    <label for="dateBirth">Fecha de nacimiento</label>
+                    <input class="form-control" id="datepicker" name="fechanac">
+                    <script>
+                    //Debe estar dentro de una etiqueta <script> dentro del HTML, así lo requiere la librería.
+                    $('#datepicker').datepicker({
                     uiLibrary: 'bootstrap4',
                     format: 'dd/mm/yyyy',
+                    modal: true,
+                    header: true,
+                    footer: true,
                     icons: {
-                      rightIcon: '<i class="fa fa-calendar-alt fa-lg" aria-hidden="true"></i>'
+                    rightIcon: '<i class="fa fa-calendar-alt fa-lg" aria-hidden="true"></i>'
                     }
-                  });
-                </script>
-              </div>
-            </div>
-            <!--CI-->
-            <div class="col-12">
-              <div class="form-group">
-                <label for="nombre">RUT o C.I.</label>
-                <div class="input-group">
-                  <select class="col-2" id="SelectRutCi">
-                    <option>C.I</option>
-                    <option>RUT</option>
-                  </select>
-                  <input class="form-control" id="rut-ci" type="number" name="rutoci" placeholder="C.I. sin puntos ni guiones. Incluido dígito verificador" alt="RUT o CI">
+                    });
+                    </script>
+                  </div>
+                </div>
+                <!--CI-->
+                <div class="col-12">
+                  <div class="form-group">
+                    <label for="nombre">RUT o C.I.</label>
+                    <div class="input-group">
+                      <select class="col-2" id="SelectRutCi">
+                        <option>C.I</option>
+                        <option>RUT</option>
+                      </select>
+                      <input class="form-control" id="rut-ci" type="number" name="rutoci" placeholder="C.I. sin puntos ni guiones. Incluido dígito verificador" alt="RUT o CI">
+                    </div>
+                  </div>
+                </div>
+                <!--Email-->
+                <div class="col-12">
+                  <div class="form-group">
+                    <label for="email">Email</label>
+                    <div class="input-group">
+                      <span class="input-group-text"><i class="fa fa-at fa-lg" aria-hidden="true"></i></span>
+                      <input class="form-control" name="mail" placeholder="tuconejito@ejemplo.com">
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-            <!--Email-->
+            <div class="col-12 m-3">
+            </div>
             <div class="col-12">
-              <div class="form-group">
-                <label for="email">Email</label>
-                <div class="input-group">
-                  <span class="input-group-text"><i class="fa fa-at fa-lg" aria-hidden="true"></i></span>
-                  <input class="form-control" name="mail" placeholder="tuconejito@ejemplo.com">
+              <div class="card">
+                <div class="card-header p-2">
+                  <div class="container text-center">
+                    <p class="lead">A dónde debemos enviar tu compra?</p>
+                  </div>
+                </div>
+                <div class="card-body card-block">
+                  <!--Departamento-->
+                  <div class="col-12 p-0">
+                    <div class="form-group">
+                      <label for="departamento">Departamento</label>
+                      <div class="input-group">
+                        <span class="input-group-text"><i class="fa fa-map-marker-alt fa-lg" aria-hidden="true"></i></span>
+                        <select name="departamento" id="depto" class="form-control">
+                          <option value="0">Artigas</option>
+                          <option value="1">Canelones</option>
+                          <option value="2">Cerro largo</option>
+                          <option value="3">Colonia</option>
+                          <option value="4">Durazno</option>
+                          <option value="5">Flores</option>
+                          <option value="6">Lavalleja</option>
+                          <option value="7">Maldonado</option>
+                          <option value="8">Montevideo</option>
+                          <option value="9">Paysandú</option>
+                          <option value="10">Rio Negro</option>
+                          <option value="11">Rivera</option>
+                          <option value="12">Rocha</option>
+                          <option value="13">Salto</option>
+                          <option value="14">San José</option>
+                          <option value="15">Soriano</option>
+                          <option value="16">Tacuarembó</option>
+                          <option value="17">Treinta y Tres</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <label for="calle">Calle</label>
+                    <div class="input-group">
+                      <span class="input-group-text"><i class="fa fa-road fa-lg" aria-hidden="true"></i></span>
+                      <input class="form-control" name="calle" alt="Calle" placeholder="Calle">
+                    </div>
+                  </div>
+                  <div class="row form-group">
+                    <div class="col col-md-6">
+                      <label for="esquina">Esquina</label>
+                      <div class="input-group">
+                        <span class="input-group-text"><i class="fa fa-compass fa-lg" aria-hidden="true"></i></span>
+                        <input class="form-control" name="esquina" alt="Esquina" placeholder="Esquina">
+                      </div>
+                    </div>
+                    <div class="col col-md-6">
+                      <label for="numeropuerta">Numero de puerta</label>
+                      <div class="input-group">
+                        <span class="input-group-text"><i class="fa fa-door-open fa-lg" aria-hidden="true"></i></span>
+                        <input class="form-control" name="numeropuerta" alt="Numero de puerta" placeholder="Numero de puerta">
+                      </div>
+                    </div>
+                  </div>
+                  <!--Fuera o dentro de Ciudad-->
+                  <div class="container text-center col col-md-9">
+                    <div class="form-check">
+                      <div class="radUbicacion">
+                        <label for="ciudad" class="form-check-label ">
+                          <input type="radio" name="ubicacion" value="ciudad" class="form-check-input">Ciudad
+                        </label>
+                      </div>
+                      <div class="radio">
+                        <label for="afueras" class="form-check-label ">
+                          <input type="radio" name="ubicacion" value="afueras" class="form-check-input">Afueras de la ciudad
+                        </label>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="col-12 m-3">
-        </div>
-        <div class="col-12">
-          <div class="card">
-            <div class="card-header p-2">
-              <div class="container text-center">
-                <p class="lead">A dónde debemos enviar tu pedido?</p>
-              </div>
-            </div>
-            <div class="card-body card-block">
-              <!--Departamento-->
-              <div class="col-12 p-0">
-                <div class="form-group">
-                  <label for="departamento">Departamento</label>
-                  <div class="input-group">
-                    <span class="input-group-text"><i class="fa fa-map-marker-alt fa-lg" aria-hidden="true"></i></span>
-                    <select name="departamento" id="depto" class="form-control">
-                      <option value="0">Artigas</option>
-                      <option value="1">Canelones</option>
-                      <option value="2">Cerro largo</option>
-                      <option value="3">Colonia</option>
-                      <option value="4">Durazno</option>
-                      <option value="5">Flores</option>
-                      <option value="6">Lavalleja</option>
-                      <option value="7">Maldonado</option>
-                      <option value="8">Montevideo</option>
-                      <option value="9">Paysandú</option>
-                      <option value="10">Rio Negro</option>
-                      <option value="11">Rivera</option>
-                      <option value="12">Rocha</option>
-                      <option value="13">Salto</option>
-                      <option value="14">San José</option>
-                      <option value="15">Soriano</option>
-                      <option value="16">Tacuarembó</option>
-                      <option value="17">Treinta y Tres</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-              <div class="row form-group">
-                <div class="col col-md-6">
-                  <label for="esquina">Esquina</label>
-                  <div class="input-group">
-                    <span class="input-group-text"><i class="fa fa-compass fa-lg" aria-hidden="true"></i></span>
-                    <input class="form-control" name="esquina" alt="Esquina" placeholder="Esquina">
-                  </div>
-                </div>
-                <div class="col col-md-6">
-                  <label for="calle">Calle</label>
-                  <div class="input-group">
-                    <span class="input-group-text"><i class="fa fa-road fa-lg" aria-hidden="true"></i></span>
-                    <input class="form-control" name="calle" alt="Calle" placeholder="Calle">
-                  </div>
-                </div>
-              </div>
-              <!--Fuera o dentro de Ciudad-->
-              <div class="container text-center col col-md-9">
-                <div class="form-check">
-                  <div class="radio">
-                    <label for="radio1" class="form-check-label ">
-                      <input type="radio" id="radio1" name="radios" value="option1" class="form-check-input">Ciudad
-                    </label>
-                  </div>
-                  <div class="radio">
-                    <label for="radio2" class="form-check-label ">
-                      <input type="radio" id="radio2" name="radios" value="option2" class="form-check-input">Afueras de la ciudad
-                    </label>
-                  </div>
-                </div>
-              </div>
+          <div class="col-12 m-3">
+          </div>
+          <!--Boton Submit-->
+          <div class="col-12 text-center">
+            <div class="form-group">
+              <button type="submit" id="bttnGuardar" class="btn btn-primary" onclick="ProbarCon()">Siguiente</button>
             </div>
           </div>
         </div>
-      </div>
-      <div class="col-12 m-3">
-      </div>
-      <!--Boton Submit-->
-      <div class="col-12 text-center">
-        <div class="form-group">
-          <button type="submit" id="bttnGuardar" class="btn btn-primary" onclick="ProbarCon()">Siguiente</button>
-        </div>
-      </div>
-  </div>
-  <!--Fin container-->
-  </form>
-  <!--Fin Form-->
-  <hr class="feature-divider">
-  <!--FIN INTERPAGE-->
-  </div>
-  <footer>
-    <div class="footer-copyright text-center py-3 container marketing">
-      <p>©2018 Zennet Soluciones. · Privacidad · Terminos ·
-        <a href="index.html">Volver al inicio</a> <i class="fa fa-level-up mr-1"></i></p>
+        <!--Fin container-->
+      </form>
+      <!--Fin Form-->
+      <hr class="feature-divider">
+      <!--FIN INTERPAGE-->
     </div>
-  </footer>
-</body>
+    <footer>
+      <div class="footer-copyright text-center py-3 container marketing">
+        <p>©2018 Zennet Soluciones. · Privacidad · Terminos ·
+          <b><a href="#"><i class="fa fa-home"></i> Volver al inicio</a></b>
+        </p>
+      </div>
+    </footer>
+  </body>
 </html>
