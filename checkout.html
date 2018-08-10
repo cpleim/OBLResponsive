@@ -62,25 +62,25 @@
               <i class="fa fa-hand-holding mr-1"></i>Servicios
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">
-                <i class="fa fa-wrench mr-1"></i>
-                Reparación de equipos
-              </a>
-              <a class="dropdown-item" href="#">
+              <a class="dropdown-item" href="index.html#respaldo_y_recuperacion">
                 <i class="fa fa-download mr-1"></i>
-                Recuperación de datos
+                Respaldo y recuperación de datos
               </a>
-              <a class="dropdown-item" href="#">
-                <i class="fa fa-cogs mr-1"></i>
-                Equipamiento a medida
+              <a class="dropdown-item" href="index.html#reparaciones_y_mantenimientos">
+                <i class="fa fa-wrench mr-1"></i>
+                Reparaciones y mantenimientos
+              </a>
+              <a class="dropdown-item" href="index.html#equipamientos_a_medida">
+                <i class="fa fa-desktop mr-1"></i>
+                Equipamientos a medida
               </a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">
+              <a class="dropdown-item" href="market.html">
                 <i class="fa fa-shopping-cart mr-3"></i>
-                Tienda (new!)
+                Market <span class="badge badge-secondary">New!</span>
               </a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Substrarum Engine</a>
+              <a class="dropdown-item" href="subpage/substratumEx/index.html">Substrarum Engine</a>
               <a class="dropdown-item" href="#"></i>Zennet Cloud</a>
               <a class="dropdown-item" href="#">zData</a>
             </div>
@@ -109,30 +109,6 @@
         </button>
         <h5 class="alert-heading">Felíz Cumpleaños!</h5>
         <p id="msgSys"></p>
-      </div>
-      <!-- Button trigger modal -->
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-      test modal
-      </button>
-      <!-- Modal -->
-      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Atención</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              ...
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Continuar</button>
-              <button type="button" class="btn btn-primary">Cancelar</button>
-            </div>
-          </div>
-        </div>
       </div>
       <!--INTERPAGE-->
       <div class="container">
@@ -342,7 +318,7 @@
                       <label for="card-Numero">Numero de tarjeta</label>
                       <div class="input-group">
                         <span class="input-group-text"><i class="fa fa-credit-card fa-lg" aria-hidden="true"></i></span>
-                        <input class="form-control" id="cardNumero" name="ccardNumero" alt="Numero de tarjeta" placeholder="Ej: 373444216734474">
+                        <input type="number" class="form-control" id="cardNumero" name="ccardNumero" alt="Numero de tarjeta" placeholder="Ej: 373444216734474">
                       </div>
                     </div>
                   </div>
@@ -356,7 +332,7 @@
                     <div class="col col-md-6">
                       <label for="card-sec-code">Código de seguridad</label>
                       <div class="input-group">
-                        <input class="form-control" alt="Codigo de seguridad" name="ccardSecCode">
+                        <input type="number" class="form-control" alt="Codigo de seguridad" name="ccardSecCode">
                         <span class="input-group-text"><i class="fa fa-question-circle fa-lg" aria-hidden="true"></i>
                         </span>
                       </div>

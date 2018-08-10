@@ -27,15 +27,26 @@
 /*
  *Para quitar las flechitas de seleccion de numero
  */
-input[type = number]::-webkit - inner - spin - button,
-  input[type = number]::-webkit - outer - spin - button {
-    -webkit - appearance: none;
-    margin: 0;
-  }
+input[type='number'] {
+    -moz-appearance:textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
 
 /*
  *Cuando se muestra un error en un campo, se colorea en rojo
  */
 label.error {
   color: red;
+}
+
+textarea {
+   resize: none;
+}
+
+.form-control:disabled, .form-control[readonly] {
+    background-color: #ffffff;
 }
