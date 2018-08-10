@@ -103,22 +103,16 @@
           </ul>
         </div>
       </nav>
-
-<div id="alertMsg" style="display: none;" class="alert alert-danger" role="alert">
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-  </button>
-  <h5 class="alert-heading">Felíz Cumpleaños!</h5>
-  <p id="msgSys"></p>
-</div>
-
+      <div id="alertMsg" style="display: none;" class="alert alert-danger" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button>
+        <h5 class="alert-heading">Felíz Cumpleaños!</h5>
+        <p id="msgSys"></p>
+      </div>
       <!-- Button trigger modal -->
       <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
       test modal
-      </button>
-      <!-- Button trigger edad -->
-      <button type="button" class="btn btn-primary" onclick="checkEdad()">
-      check edad
       </button>
       <!-- Modal -->
       <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -154,10 +148,10 @@
               <div class="card">
                 <div class="card-header p-2">
                   <div class="container text-center">
-                    <p class="lead">Datos Personales</p>
+                    <a class="lead">Datos Personales</a>
                   </div>
                 </div>
-                <div class="row form-group p-3">
+                <div class="row form-group m-1">
                   <div class="col col-md-6">
                     <label for="nombre">Nombre</label>
                     <div class="input-group">
@@ -209,7 +203,7 @@
                     <label for="nombre">RUT o C.I.</label>
                     <div class="input-group">
                       <select class="col-2" id="SelectRutCi">
-                        <option>C.I</option>
+                        <option>CI</option>
                         <option>RUT</option>
                       </select>
                       <input class="form-control" id="rut-ci" type="number" name="rutoci" placeholder="C.I. sin puntos ni guiones. Incluido dígito verificador" alt="RUT o CI">
@@ -228,13 +222,12 @@
                 </div>
               </div>
             </div>
-            <div class="col-12 m-3">
-            </div>
+            <div class="col-12 m-3"></div>
             <div class="col-12">
               <div class="card">
                 <div class="card-header p-2">
                   <div class="container text-center">
-                    <p class="lead">A dónde debemos enviar tu compra?</p>
+                    <a class="lead">A dónde debemos enviar tu compra?</a>
                   </div>
                 </div>
                 <div class="card-body card-block">
@@ -267,11 +260,22 @@
                       </div>
                     </div>
                   </div>
-                  <div class="col-12">
-                    <label for="calle">Calle</label>
-                    <div class="input-group">
-                      <span class="input-group-text"><i class="fa fa-road fa-lg" aria-hidden="true"></i></span>
-                      <input class="form-control" name="calle" alt="Calle" placeholder="Calle">
+                  <div class="row form-group">
+                    <div class="col-12">
+                      <label for="postal">Código Postal</label>
+                      <div class="input-group">
+                        <span class="input-group-text"><i class="fa fa-envelope-open fa-lg" aria-hidden="true"></i></span>
+                        <input class="form-control" name="postal" alt="Postal" placeholder="Codigo postal">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row form-group">
+                    <div class="col-12">
+                      <label for="calle">Calle</label>
+                      <div class="input-group">
+                        <span class="input-group-text"><i class="fa fa-road fa-lg" aria-hidden="true"></i></span>
+                        <input class="form-control" name="calle" alt="Calle" placeholder="Calle">
+                      </div>
                     </div>
                   </div>
                   <div class="row form-group">
@@ -283,7 +287,7 @@
                       </div>
                     </div>
                     <div class="col col-md-6">
-                      <label for="numeropuerta">Numero de puerta</label>
+                      <label for="numeropuerta">Numero de puerta / Edificio</label>
                       <div class="input-group">
                         <span class="input-group-text"><i class="fa fa-door-open fa-lg" aria-hidden="true"></i></span>
                         <input class="form-control" name="numeropuerta" alt="Numero de puerta" placeholder="Numero de puerta">
@@ -292,10 +296,11 @@
                   </div>
                   <!--Fuera o dentro de Ciudad-->
                   <div class="container text-center col col-md-9">
+                    <h6>Donde te ubicas?</h6>
                     <div class="form-check">
                       <div class="radUbicacion">
                         <label for="ciudad" class="form-check-label ">
-                          <input type="radio" name="ubicacion" value="ciudad" class="form-check-input">Ciudad
+                          <input type="radio" name="ubicacion" value="ciudad" checked="checked" class="form-check-input">Ciudad
                         </label>
                       </div>
                       <div class="radio">
@@ -308,28 +313,81 @@
                 </div>
               </div>
             </div>
-          </div>
-          <div class="col-12 m-3">
-          </div>
-          <!--Boton Submit-->
-          <div class="col-12 text-center">
-            <div class="form-group">
-              <button type="submit" id="bttnGuardar" class="btn btn-primary" onclick="ProbarCon()">Siguiente</button>
+            <div class="col-12 m-3"></div>
+            <div class="col-12">
+              <div class="card">
+                <div class="card-header p-2">
+                  <div class="container text-center">
+                    <a class="lead">Datos de pago</a>
+                  </div>
+                </div>
+                <div class="card-body card-block">
+                  <div class="form-group text-center">
+                    <div class="container text-center col col-md-9">
+                      <h6>Compañias que aceptamos</h6>
+                    </div>
+                    <i class="fab fa-cc-visa fa-3x m-3" aria-hidden="true"></i><i class="fab fa-cc-mastercard fa-3x m-3" aria-hidden="true"></i><i class="fab fa-cc-amex fa-3x m-3" aria-hidden="true"></i>
+                  </div>
+                  <div class="row form-group">
+                    <div class="col-12">
+                      <label for="card-Nombre">Nombre del propietario</label>
+                      <div class="input-group">
+                        <span class="input-group-text"><i class="fa fa-id-card fa-lg" aria-hidden="true"></i></span>
+                        <input class="form-control" name="ccardNombre" alt="Nombre del propietario" placeholder="Juan Perez">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row form-group">
+                    <div class="col-12">
+                      <label for="card-Numero">Numero de tarjeta</label>
+                      <div class="input-group">
+                        <span class="input-group-text"><i class="fa fa-credit-card fa-lg" aria-hidden="true"></i></span>
+                        <input class="form-control" id="cardNumero" name="ccardNumero" alt="Numero de tarjeta" placeholder="Ej: 373444216734474">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row form-group">
+                    <div class="col col-md-6">
+                      <label for="card-Expiracion">Fecha de expiración</label>
+                      <div class="input-group">
+                        <input class="form-control" name="ccardExpiracion" alt="Fecha de expiración" placeholder="10/20">
+                      </div>
+                    </div>
+                    <div class="col col-md-6">
+                      <label for="card-sec-code">Código de seguridad</label>
+                      <div class="input-group">
+                        <input class="form-control" alt="Codigo de seguridad" name="ccardSecCode">
+                        <span class="input-group-text"><i class="fa fa-question-circle fa-lg" aria-hidden="true"></i>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <!--Fin container-->
-      </form>
-      <!--Fin Form-->
-      <hr class="feature-divider">
-      <!--FIN INTERPAGE-->
-    </div>
-    <footer>
-      <div class="footer-copyright text-center py-3 container marketing">
-        <p>©2018 Zennet Soluciones. · Privacidad · Terminos ·
-          <b><a href="#"><i class="fa fa-home"></i> Volver al inicio</a></b>
-        </p>
+        <div class="col-12 m-3">
+        </div>
+        <!--Boton Submit-->
+        <div class="col-12 text-center">
+          <div class="form-group">
+            <button type="submit" id="bttnGuardar" class="btn btn-primary" onclick="ProbarCon()"><i class="fa fa-lock fa-lg mr-2" aria-hidden="true" href="process.html"></i>Siguiente</button>
+          </div>
+        </div>
       </div>
-    </footer>
-  </body>
+      <!--Fin container-->
+    </form>
+    <!--Fin Form-->
+    <hr class="feature-divider">
+    <!--FIN INTERPAGE-->
+  </div>
+  <footer>
+    <div class="footer-copyright text-center py-3 container marketing">
+      <p>©2018 Zennet Soluciones. · Privacidad · Terminos ·
+        <b><a href="#"><i class="fa fa-arrow-up"></i> Volver arriba</a></b>
+      </p>
+    </div>
+  </footer>
+</body>
 </html>

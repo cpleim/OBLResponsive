@@ -1,5 +1,4 @@
 //jQuery Validator custom rules
-
 //Validacion RUT - CI
 jQuery.validator.addMethod("RangeCiRUT", function(value, element) {
   return ProbarCon();
@@ -12,7 +11,12 @@ jQuery.validator.addMethod("FormatoDate", function(value, element) {
 
 //Validacion edad
 jQuery.validator.addMethod("CheckEdad", function(value, element) {
- return isMayor();
+  return isMayor();
+});
+
+//Validacion creditcard
+jQuery.validator.addMethod("CheckTarjeta", function(value, element) {
+  return checkCard();
 });
 
 
@@ -41,7 +45,29 @@ $(function() {
       rutoci: {
         required: true,
         RangeCiRUT: true
-      }
+      },
+      ccardNumero: {
+        required: true,
+        CheckTarjeta: true
+      },
+      calle: {
+        required: true
+      },
+      esquina: {
+        required: true
+      },
+      numeropuerta: {
+        required: true
+      },
+      ccardNombre: {
+        required: true
+      },
+      ccardExpiracion: {
+        required: true
+      },
+      ccardSecCode: {
+        required: true
+      },
 
     },
     messages: {
@@ -67,7 +93,29 @@ $(function() {
       rutoci: {
         required: "El RUT o la CI es requerida",
         RangeCiRUT: "Documento no valido"
-      }
+      },
+      ccardNumero: {
+        required: "El numero de tarjeta es requerido",
+        CheckTarjeta: "Tarjeta invalida"
+      },
+      calle: {
+        required: "Este campo es requerido",
+      },
+      esquina: {
+        required: "Este campo es requerido",
+      },
+      numeropuerta: {
+        required: "Este campo es requerido",
+      },
+      ccardNombre: {
+        required: "El nombre de propietario es requerido",
+      },
+      ccardExpiracion: {
+        required: "Este campo es requerido",
+      },
+      ccardSecCode: {
+        required: "Este campo es requerido",
+      },
 
     },
     errorPlacement: function(error, element) {
@@ -91,17 +139,12 @@ function checkFormato() {
 
 function checkEdad() {
   var esMayor = false;
-
   var anioActual = new Date().getFullYear();
   var mesActual = new Date().getMonth() + 1;
   var diaActual = new Date().getDate();
-
   var fechaBirth = document.getElementById("datepicker").value;
-
   var verif = moment(fechaBirth, 'DD/MM/YYYY', true).isValid();
-
   var fechaSplit = fechaBirth.split('/');
-
   var edad = anioActual - fechaSplit[2];
 
   /*
@@ -165,7 +208,7 @@ function checkEdad() {
       }
       if (esMayor == false) {
         console.log(esMayor + ", edad: " + edad + ". Nació el " + fechaBirth + ", cumple el " + diaActual + "/" + mesActual + "/" + anioActual + ". Prorroga: dia cumpleaños + 1.");
-        document.getElementById("msgSys").innerText = "Por cuestiones de seguridad, nuestro sistema solicita que haya pasado al menos un dia luego de haber cumplido la mayoría de edad.\nPorfavor vuelve a intentar tu compra mañana."
+        document.getElementById("msgSys").innerText = "Por cuestiones de seguridad, nuestro sistema solicita que haya pasado al menos un dia luego de que hayas cumplido la mayoría de edad.\nPorfavor vuelve a intentar tu compra el día de mañana."
         document.getElementById("alertMsg").style.display = "block";
         return false;
       }
@@ -177,6 +220,13 @@ function isMayor() {
   var yaMayor = false;
   yaMayor = checkEdad();
   return yaMayor;
+}
+
+function checkCard() {
+  var isVeridic = false;
+  var cardNumero = document.getElementById("cardNumero").value;
+  isVeridic = luhn_validate(cardNumero);
+  return isVeridic;
 }
 
 function ProbarCon() {
@@ -287,28 +337,47 @@ function ValidarCI(ci) {
   }
 }
 
-function checkCreditCard() {
-  /**
-   * Luhn algorithm in JavaScript: validate credit card number supplied as string of numbers
-   * @author ShirtlessKirk. Copyright (c) 2012.
-   * @license WTFPL (http://www.wtfpl.net/txt/copying)
-   */
-  var luhnChk = (function(arr) {
-    return function(ccNum) {
-      var
-        len = ccNum.length,
-        bit = 1,
-        sum = 0,
-        val;
 
-      while (len) {
-        val = parseInt(ccNum.charAt(--len), 10);
-        sum += (bit ^= 1) ? arr[val] : val;
-      }
+/*
+ * JavaScript implementation of the Luhn algorithm, with calculation and validation functions
+ * simplycalc.com/luhn-source.php
+ */
 
-      return sum && sum % 10 === 0;
-    };
-  }([0, 2, 4, 6, 8, 1, 3, 5, 7, 9]));
+/* luhn_checksum
+ * Implement the Luhn algorithm to calculate the Luhn check digit.
+ * Return the check digit.
+ */
+
+function luhn_checksum(code) {
+  var len = code.length
+  var parity = len % 2
+  var sum = 0
+  for (var i = len - 1; i >= 0; i--) {
+    var d = parseInt(code.charAt(i))
+    if (i % 2 == parity) {
+      d *= 2
+    }
+    if (d > 9) {
+      d -= 9
+    }
+    sum += d
+  }
+  return sum % 10
+}
+
+/* luhn_caclulate
+ * Return a full code (including check digit), from the specified partial code (without check digit).
+ */
+function luhn_caclulate(partcode) {
+  var checksum = luhn_checksum(partcode + "0")
+  return checksum == 0 ? 0 : 10 - checksum
+}
+
+/* luhn_validate
+ * Return true if specified code (with check digit) is valid.
+ */
+function luhn_validate(fullcode) {
+  return luhn_checksum(fullcode) == 0
 }
 
 
@@ -328,6 +397,16 @@ $(document).ready(function() {
   $('input[name=fechanac]').tooltip({
     'trigger': 'focus',
     'title': 'Ej: 24/09/1999'
+  });
+
+  $('input[name=ccardSecCode]').tooltip({
+    'trigger': 'focus',
+    'title': 'El numero de 3 digitos al dorso de tu tarjeta'
+  });
+
+  $('input[name=postal]').tooltip({
+    'trigger': 'focus',
+    'title': 'Ej: 60000'
   });
 
 });
