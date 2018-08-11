@@ -18,6 +18,9 @@
     <!--Bootstrap-->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js">
     </script>
+    <!--Market Manager-->
+    <script src="js/lazymarket.js">
+    </script>
     <!-- Local CSS -->
     <link rel="stylesheet" href="css/style.css">
     <!--Icono-->
@@ -89,6 +92,11 @@
           </ul>
         </div>
       </nav>
+      <div class="alert alert-warning" role="alert">
+        <div class="container text-center">
+        <i class="fa fa-code mr-2"></i>Tienda en desarrollo - Meramente demostrativa. 
+      </div>
+      </div>
       <!-- Modal -->
       <div class="modal fade" id="productInfo" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -100,10 +108,32 @@
               </button>
             </div>
             <div class="modal-body">
-              ...
+              <div class="container text-center">
+                <h3><a id="productName"></a></h3>
+                <ul>
+                  <li><a id="anio"></a></li>
+                  <hr class="feature-divider">
+                  <li><a id="pantalla"></a></li>
+                  <hr class="feature-divider">
+                  <li><a id="procesador"></a></li>
+                  <hr class="feature-divider">
+                  <li><a id="procesadorChar"></a></li>
+                  <hr class="feature-divider">
+                  <li><a id="memoria"></a></li>
+                  <hr class="feature-divider">
+                  <li><a id="disco"></a></li>
+                  <hr class="feature-divider">
+                  <li><a id="graficos"></a></li>
+                  <hr class="feature-divider">
+                  <li><a id="net"></a></li>
+                  <hr class="feature-divider">
+                  <li><a id="puertos"></a></li>
+                </ul>
+                <p id="productInfo"></p>
+              </div>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-primary">Comprar</button>
+              <button type="button" class="btn btn-primary" id="toCheckout"><i class="fa fa-shopping-cart mr-3"></i>Comprar</button>
             </div>
           </div>
         </div>
@@ -121,9 +151,12 @@
             <div class="card">
               <img class="card-img-top" src="assets/img/imacpro-27-retina-config-hero.jpg" alt="Card image cap">
               <div class="card-body">
-                <h5 class="card-title">iMac Pro</h5>
+                <h5 class="card-title text-center">iMac Pro</h5>
                 <textarea class="form-control" readonly rows=6>Lo que este iMac ofrece es una potencia elegante y rápida, además la promesa de poder trabajar en un entorno multimedia cada vez más exigente. Este es un gran equipo  de edición… increíblemente genial.</textarea>
-                <a href="#" class="btn btn-primary mt-2" data-toggle="modal" data-target="#productInfo">Detalles</a>
+                <a href="#" id="IMPRO25565" class="btn btn-primary mt-2" data-toggle="modal" data-target="#productInfo">Detalles</a>
+              </div>
+              <div class="card-footer text-muted">
+                <i id="icoItem1" class="fa fa-check mr-2"></i><a id="stockItem1"></a>
               </div>
             </div>
           </div>
@@ -131,9 +164,12 @@
             <div class="card">
               <img class="card-img-top" src="assets/img/macbookair17.jpeg" alt="Card image cap">
               <div class="card-body">
-                <h5 class="card-title">MacBook Air</h5>
+                <h5 class="card-title text-center">MacBook Air</h5>
                 <textarea class="form-control" readonly rows=7>¿Eres de los que buscan potencia a raudales? Ya es hora de que sepas que no es necesario tener el último MacBook Pro, sino que con el Intel Core i5 y los 8 GB de memoria RAM que monta este MacBook Air de 13″ tendrás más que suficiente para las tareas del día a día, incluso para aquellas que exigen un punto más de rendimiento.</textarea>
-                <a href="#" class="btn btn-primary mt-2">Detalles</a>
+                <a href="#" id="MBAIR25566" class="btn btn-primary mt-2" data-toggle="modal" data-target="#productInfo">Detalles</a>
+              </div>
+              <div class="card-footer text-muted">
+                <i id="icoItem2" class="fa fa-check mr-3"></i><a id="stockItem2"></a>
               </div>
             </div>
           </div>
@@ -141,20 +177,25 @@
             <div class="card">
               <img class="card-img-top" src="assets/img/macbook-pro-2016.jpg" alt="Card image cap">
               <div class="card-body">
-                <h5 class="card-title">MacBook Pro</h5>
+                <h5 class="card-title text-center">MacBook Pro</h5>
                 <textarea class="form-control" readonly rows=6>Los MacBook Pro con Touch Bar mejoran su hardware externo e interior para tener más rendimiento y más características enfocadas al sector creativo. Una puesta al día para que siga siendo el portátil Mac más avanzado hasta el momento.</textarea>
-                <a href="#" class="btn btn-primary mt-2">Detalles</a>
+                <a href="#" id="MBPRO25567" class="btn btn-primary mt-2" data-toggle="modal" data-target="#productInfo">Detalles</a>
+              </div>
+              <div class="card-footer text-muted">
+                <i id="icoItem3" class="fa fa-check mr-2"></i><a id="stockItem3"></a>
               </div>
             </div>
           </div>
-          
           <div class="col-md-4 mb-4">
             <div class="card">
               <img class="card-img-top" src="assets/img/appleWatch.jpg" alt="Card image cap">
               <div class="card-body">
-                <h5 class="card-title">Apple Watch Series 3</h5>
+                <h5 class="card-title text-center">Apple Watch Series 3</h5>
                 <textarea class="form-control" readonly rows=6>Mejor batería, opciones deportivas y rendimiento general en tu muñeca.</textarea>
-                <a href="#" class="btn btn-primary mt-2">Detalles</a>
+                <a href="#" id="WATCHSERIES3" class="btn btn-primary mt-2" data-toggle="modal" data-target="#productInfo">Detalles</a>
+              </div>
+              <div class="card-footer text-muted">
+                <i id="icoItem4" class="fa fa-check mr-3"></i><a id="stockItem4"></a>
               </div>
             </div>
           </div>
@@ -162,9 +203,12 @@
             <div class="card">
               <img class="card-img-top" src="assets/img/iPhoneX.jpg" alt="Card image cap">
               <div class="card-body">
-                <h5 class="card-title">iPhone X</h5>
+                <h5 class="card-title text-center">iPhone X</h5>
                 <textarea class="form-control" readonly rows=6>Un dispositivo tan envolvente que prácticamente desapareciera al usarlo. Tan inteligente que respondiera a un toque, a una palabra o a una mirada. Hoy el iPhone X hace realidad ese objetivo. Dile hola al futuro.</textarea>
-                <a href="#" class="btn btn-primary mt-2">Detalles</a>
+                <a href="#" id="IPHONEX" class="btn btn-primary mt-2" data-toggle="modal" data-target="#productInfo">Detalles</a>
+              </div>
+              <div class="card-footer text-muted">
+                <i id="icoItem5" class="fa fa-check mr-3"></i><a id="stockItem5"></a>
               </div>
             </div>
           </div>
@@ -172,9 +216,12 @@
             <div class="card">
               <img class="card-img-top" src="assets/img/appleTV.jpg" alt="Card image cap">
               <div class="card-body">
-                <h5 class="card-title">Apple TV</h5>
+                <h5 class="card-title text-center">Apple TV</h5>
                 <textarea class="form-control" readonly rows=6>El Apple TV 4K te permite ver películas y series con una calidad 4K HDR increíble, y próximamente escucharlas también será increíble gracias al sonido envolvente Dolby Atmos. Además, puedes hacer streaming de tus canales favoritos en vivo y disfrutar del mejor contenido de apps como Netflix, Amazon Prime Video y muchas más.</textarea>
-                <a href="#" class="btn btn-primary mt-2">Detalles</a>
+                <a href="#" id="APPLETV" class="btn btn-primary mt-2" data-toggle="modal" data-target="#productInfo">Detalles</a>
+              </div>
+              <div class="card-footer text-muted">
+                <i id="icoItem6" class="fa fa-check mr-3"></i><a id="stockItem6"></a>
               </div>
             </div>
           </div>
