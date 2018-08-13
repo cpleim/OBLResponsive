@@ -197,6 +197,10 @@ $(document).ready(function() {
   });
 
 
+localStorage.clear();
+
+sessionStorage.clear();
+
   $('#toCheckout').click(function() {
     sessionStorage.setItem("ProductID", cartItem);
     localStorage[articulo[cartItem].itemId] = JSON.stringify(articulo[cartItem]);

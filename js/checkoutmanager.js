@@ -1,11 +1,17 @@
+//GET
 selectedCartItem = sessionStorage.ProductID;
-
 var cart = JSON.parse(localStorage[selectedCartItem]);
+//Fin GET
+
+var clave = sessionStorage.ProductID;
+
+
+
 
 $(document).ready(function() {
-$('#btnInfoProducto').click(function() {
-  var image = cart.imgLocation;
-    $("#imgProductInfo").attr("src",image);
+  $('#btnInfoProducto').click(function() {
+    var image = cart.imgLocation;
+    $("#imgProductInfo").attr("src", image);
     $('#productName').text(cart.nombre);
     $('#anio').text(cart.anio);
     $('#pantalla').text(cart.pantalla);
@@ -404,11 +410,41 @@ function luhn_validate(fullcode) {
   return luhn_checksum(fullcode) == 0
 }
 
-function okSubbmit(){
-var formCheck = $('form[name=FormCheckout]').valid();
-if(formCheck == true){
-window.location = "process.html";
-}
+function okSubbmit() {
+  var formCheck = $('form[name=FormCheckout]').valid();
+  if (formCheck == true) {
+    var clave = sessionStorage.ProductID
+    var nomcomp = $('input[name=nombre]').val();
+    var apecomp = $('input[name=apellido]').val();
+    var telcomp = $('input[name=tel]').val();
+    var rutocicomp = $('input[name=rutoci]').val();
+    var mailcomp = $('input[name=mail]').val();
+    var deptocomp = $("#depto option:selected").text();
+    var callecomp = $('input[name=calle]').val();
+    var esquinacomp = $('input[name=esquina]').val();
+    var puertacomp = $('input[name=numeropuerta]').val();
+    var ubiComp = $('input[name=ubicacion]:checked').val();
+    var pagoacomp = $('input[name=ccardNombre]').val();
+
+    cart[clave] = {
+      nombre: nomcomp,
+      apellido: apecomp,
+      tel: telcomp,
+      documento: rutocicomp,
+      mail: mailcomp,
+      departamento: deptocomp,
+      calle: callecomp,
+      esquina: esquinacomp,
+      puerta: puertacomp,
+      ubicacion: ubiComp,
+      propCC: pagoacomp
+    };
+
+    //SET
+    localStorage[clave] = JSON.stringify(cart);
+
+    window.location = "process.html";
+  }
 }
 
 
@@ -441,6 +477,3 @@ $(document).ready(function() {
   });
 
 });
-
-
-
