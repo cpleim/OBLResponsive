@@ -1,3 +1,25 @@
+selectedCartItem = sessionStorage.ProductID;
+
+var cart = JSON.parse(localStorage[selectedCartItem]);
+
+$(document).ready(function() {
+$('#btnInfoProducto').click(function() {
+  var image = cart.imgLocation;
+    $("#imgProductInfo").attr("src",image);
+    $('#productName').text(cart.nombre);
+    $('#anio').text(cart.anio);
+    $('#pantalla').text(cart.pantalla);
+    $('#procesador').text(cart.procesador);
+    $('#procesadorChar').text(cart.procesadorChar);
+    $('#memoria').text(cart.memoria);
+    $('#disco').text(cart.disco);
+    $('#graficos').text(cart.graficos);
+    $('#net').text(cart.net);
+    $('#puertos').text(cart.puertos);
+  });
+
+});
+
 //jQuery Validator custom rules
 //Validacion RUT - CI
 jQuery.validator.addMethod("RangeCiRUT", function(value, element) {
@@ -229,6 +251,7 @@ function checkCard() {
   return isVeridic;
 }
 
+
 function ProbarCon() {
   var result = false;
   var rutCI = document.getElementById("rut-ci").value;
@@ -240,6 +263,7 @@ function ProbarCon() {
   }
   return result;
 }
+
 
 function ValidarRUT(rut) {
   if (rut.length != 12) {
@@ -380,6 +404,13 @@ function luhn_validate(fullcode) {
   return luhn_checksum(fullcode) == 0
 }
 
+function okSubbmit(){
+var formCheck = $('form[name=FormCheckout]').valid();
+if(formCheck == true){
+window.location = "process.html";
+}
+}
+
 
 //Triggers para los ToolTips  
 $(document).ready(function() {
@@ -410,3 +441,6 @@ $(document).ready(function() {
   });
 
 });
+
+
+

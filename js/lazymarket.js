@@ -4,8 +4,12 @@
  *En este caso, al ser pocos, no es necesario hacer todo un complejo sistema a parte para poder controlar la tienda.
  *Si, ya sabemos que se puede hacer mejor.
  */
+var cartItem;
+
 var articulo = [];
 articulo['IMPRO25565'] = {
+  itemId: 'IMPRO25565',
+  imgLocation: 'assets/img/imacpro-27-retina-config-hero.jpg',
   stock: 15,
   nombre: "iMac Pro",
   anio: "Año - 2018",
@@ -19,7 +23,9 @@ articulo['IMPRO25565'] = {
   puertos: "4 Puertos Thunderbolt 3, USB 3, SDXC card slot."
 };
 articulo['MBAIR25566'] = {
-  stock: 0,
+  itemId: 'MBAIR25566',
+  imgLocation: 'assets/img/macbookair17.jpeg',
+  stock: 8,
   nombre: "MacBook Air",
   anio: "Año - 2017",
   pantalla: "Pantalla widescreen de 13.3 pulgadas, retroiluminada por LED.",
@@ -32,7 +38,9 @@ articulo['MBAIR25566'] = {
   puertos: "1 Puerto Thunderbolt 2, 2 USB-3, SDXC card slot"
 };
 articulo['MBPRO25567'] = {
+  itemId: 'MBPRO25567',
   stock: 13,
+  imgLocation: 'assets/img/macbook-pro-2016.jpg',
   nombre: "MacBook Pro - Con Touch Bar",
   anio: "Año - 2018",
   pantalla: "Pantalla Retina de 13.3 pulgadas retroiluminada por LED.",
@@ -46,6 +54,8 @@ articulo['MBPRO25567'] = {
 };
 
 articulo['WATCHSERIES3'] = {
+  itemId: 'WATCHSERIES3',
+  imgLocation: 'assets/img/appleWatch.jpg',
   stock: 0,
   nombre: "Apple Watch Series 3",
   anio: "Año - 2017",
@@ -57,7 +67,9 @@ articulo['WATCHSERIES3'] = {
 };
 
 articulo['IPHONEX'] = {
-  stock: 12,
+  itemId: 'IPHONEX',
+  imgLocation: 'assets/img/iPhoneX.jpg',
+  stock: 0,
   nombre: "iPhone x",
   anio: "Año - 2017",
   disco: "64GB - 256GB",
@@ -67,7 +79,9 @@ articulo['IPHONEX'] = {
 };
 
 articulo['APPLETV'] = {
-  stock: 20,
+  itemId: 'APPLETV',
+  imgLocation: 'assets/img/appleTV.jpg',
+  stock: 0,
   nombre: "Apple TV 4K",
   anio: "Año - 2017",
   disco: "32GB - 64GB",
@@ -80,6 +94,7 @@ articulo['APPLETV'] = {
 $(document).ready(function() {
 
   $('#IMPRO25565').click(function() {
+    cartItem = articulo["IMPRO25565"].itemId;
     $('#productName').text(articulo["IMPRO25565"].nombre);
     $('#anio').text(articulo["IMPRO25565"].anio);
     $('#pantalla').text(articulo["IMPRO25565"].pantalla);
@@ -98,6 +113,7 @@ $(document).ready(function() {
   });
 
   $('#MBAIR25566').click(function() {
+    cartItem = articulo["MBAIR25566"].itemId;
     $('#productName').text(articulo["MBAIR25566"].nombre);
     $('#anio').text(articulo["MBAIR25566"].anio);
     $('#pantalla').text(articulo["MBAIR25566"].pantalla);
@@ -116,6 +132,7 @@ $(document).ready(function() {
   });
 
   $('#MBPRO25567').click(function() {
+    cartItem = articulo["MBPRO25567"].itemId;
     $('#productName').text(articulo["MBPRO25567"].nombre);
     $('#anio').text(articulo["MBPRO25567"].anio);
     $('#pantalla').text(articulo["MBPRO25567"].pantalla);
@@ -134,6 +151,7 @@ $(document).ready(function() {
   });
 
   $('#WATCHSERIES3').click(function() {
+    cartItem = articulo["WATCHSERIES3"].itemId;
     $('#productName').text(articulo["WATCHSERIES3"].nombre);
     $('#anio').text(articulo["WATCHSERIES3"].anio);
     $('#pantalla').text(articulo["WATCHSERIES3"].net);
@@ -149,6 +167,7 @@ $(document).ready(function() {
   });
 
   $('#IPHONEX').click(function() {
+    cartItem = articulo["IPHONEX"].itemId;
     $('#productName').text(articulo["IPHONEX"].nombre);
     $('#anio').text(articulo["IPHONEX"].anio);
     $('#pantalla').text(articulo["IPHONEX"].disco);
@@ -163,6 +182,7 @@ $(document).ready(function() {
   });
 
   $('#APPLETV').click(function() {
+    cartItem = articulo["APPLETV"].itemId;
     $('#productName').text(articulo["APPLETV"].nombre);
     $('#anio').text(articulo["APPLETV"].anio);
     $('#pantalla').text(articulo["APPLETV"].disco);
@@ -178,6 +198,8 @@ $(document).ready(function() {
 
 
   $('#toCheckout').click(function() {
+    sessionStorage.setItem("ProductID", cartItem);
+    localStorage[articulo[cartItem].itemId] = JSON.stringify(articulo[cartItem]);
     location.href = "checkout.html";
   });
 
