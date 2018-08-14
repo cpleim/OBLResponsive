@@ -6,13 +6,11 @@ var cart = JSON.parse(localStorage[selectedCartItem]);
 var clave = sessionStorage.ProductID;
 
 
-
-
 $(document).ready(function() {
   $('#btnInfoProducto').click(function() {
     var image = cart.imgLocation;
     $("#imgProductInfo").attr("src", image);
-    $('#productName').text(cart.nombre);
+    $('#productName').text(cart.nombre + " - " + cart.precio);
     $('#anio').text(cart.anio);
     $('#pantalla').text(cart.pantalla);
     $('#procesador').text(cart.procesador);

@@ -11,6 +11,7 @@ articulo['IMPRO25565'] = {
   itemId: 'IMPRO25565',
   imgLocation: 'assets/img/imacpro-27-retina-config-hero.jpg',
   stock: 15,
+  precio: 'USD 5000',
   nombre: "iMac Pro",
   anio: "Año - 2018",
   pantalla: "27-inch Retina 5K 5120-by-2880 P3 display.",
@@ -26,6 +27,7 @@ articulo['MBAIR25566'] = {
   itemId: 'MBAIR25566',
   imgLocation: 'assets/img/macbookair17.jpeg',
   stock: 8,
+  precio: 'USD 2000',
   nombre: "MacBook Air",
   anio: "Año - 2017",
   pantalla: "Pantalla widescreen de 13.3 pulgadas, retroiluminada por LED.",
@@ -40,6 +42,7 @@ articulo['MBAIR25566'] = {
 articulo['MBPRO25567'] = {
   itemId: 'MBPRO25567',
   stock: 13,
+  precio: 'USD 2800',
   imgLocation: 'assets/img/macbook-pro-2016.jpg',
   nombre: "MacBook Pro - Con Touch Bar",
   anio: "Año - 2018",
@@ -57,6 +60,7 @@ articulo['WATCHSERIES3'] = {
   itemId: 'WATCHSERIES3',
   imgLocation: 'assets/img/appleWatch.jpg',
   stock: 0,
+  precio: 'USD 500',
   nombre: "Apple Watch Series 3",
   anio: "Año - 2017",
   net: "Wi‑Fi (802.11b/g/n de 2.4 GHz)",
@@ -70,6 +74,7 @@ articulo['IPHONEX'] = {
   itemId: 'IPHONEX',
   imgLocation: 'assets/img/iPhoneX.jpg',
   stock: 0,
+  precio: 'USD 999',
   nombre: "iPhone x",
   anio: "Año - 2017",
   disco: "64GB - 256GB",
@@ -82,6 +87,7 @@ articulo['APPLETV'] = {
   itemId: 'APPLETV',
   imgLocation: 'assets/img/appleTV.jpg',
   stock: 0,
+  precio: 'USD 200',
   nombre: "Apple TV 4K",
   anio: "Año - 2017",
   disco: "32GB - 64GB",
@@ -96,6 +102,7 @@ $(document).ready(function() {
   $('#IMPRO25565').click(function() {
     cartItem = articulo["IMPRO25565"].itemId;
     $('#productName').text(articulo["IMPRO25565"].nombre);
+    $('#precio').text(articulo["IMPRO25565"].precio);
     $('#anio').text(articulo["IMPRO25565"].anio);
     $('#pantalla').text(articulo["IMPRO25565"].pantalla);
     $('#procesador').text(articulo["IMPRO25565"].procesador);
@@ -115,6 +122,7 @@ $(document).ready(function() {
   $('#MBAIR25566').click(function() {
     cartItem = articulo["MBAIR25566"].itemId;
     $('#productName').text(articulo["MBAIR25566"].nombre);
+    $('#precio').text(articulo["MBAIR25566"].precio);
     $('#anio').text(articulo["MBAIR25566"].anio);
     $('#pantalla').text(articulo["MBAIR25566"].pantalla);
     $('#procesador').text(articulo["MBAIR25566"].procesador);
@@ -134,6 +142,7 @@ $(document).ready(function() {
   $('#MBPRO25567').click(function() {
     cartItem = articulo["MBPRO25567"].itemId;
     $('#productName').text(articulo["MBPRO25567"].nombre);
+    $('#precio').text(articulo["MBPRO25567"].precio);
     $('#anio').text(articulo["MBPRO25567"].anio);
     $('#pantalla').text(articulo["MBPRO25567"].pantalla);
     $('#procesador').text(articulo["MBPRO25567"].procesador);
@@ -153,6 +162,7 @@ $(document).ready(function() {
   $('#WATCHSERIES3').click(function() {
     cartItem = articulo["WATCHSERIES3"].itemId;
     $('#productName').text(articulo["WATCHSERIES3"].nombre);
+    $('#precio').text(articulo["WATCHSERIES3"].precio);
     $('#anio').text(articulo["WATCHSERIES3"].anio);
     $('#pantalla').text(articulo["WATCHSERIES3"].net);
     $('#procesador').text(articulo["WATCHSERIES3"].gps);
@@ -169,6 +179,7 @@ $(document).ready(function() {
   $('#IPHONEX').click(function() {
     cartItem = articulo["IPHONEX"].itemId;
     $('#productName').text(articulo["IPHONEX"].nombre);
+    $('#precio').text(articulo["IPHONEX"].precio);
     $('#anio').text(articulo["IPHONEX"].anio);
     $('#pantalla').text(articulo["IPHONEX"].disco);
     $('#procesador').text(articulo["IPHONEX"].pantalla);
@@ -184,6 +195,7 @@ $(document).ready(function() {
   $('#APPLETV').click(function() {
     cartItem = articulo["APPLETV"].itemId;
     $('#productName').text(articulo["APPLETV"].nombre);
+    $('#precio').text(articulo["APPLETV"].precio);
     $('#anio').text(articulo["APPLETV"].anio);
     $('#pantalla').text(articulo["APPLETV"].disco);
     $('#procesador').text(articulo["APPLETV"].puertos);
