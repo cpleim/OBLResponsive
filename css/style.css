@@ -54,3 +54,7 @@ textarea {
 ul {
   list-style: none;
 }
+
+#titleTicket {
+  font-size: 25px;
+}
