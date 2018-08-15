@@ -1,28 +1,14 @@
-/*
- *Para hacer que las imagenes sean responsive
- */
-.img - fluid {
-    max - width: 100 % ;
-    height: auto;
-  }
+/* Makes images fully responsive */
+.img-responsive,
+.thumbnail > img,
+.thumbnail a > img,
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
 
-  /*
-   *Ajusta el tamaño del Carousel
-   */
-  .carousel.carousel - item {
-    height: 400 px;
-  }
-
-
- /*
-  *Ajusta el tamaño de las imagenes dentro del Carousel
-  */
-  .carousel - item img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    min - height: 400 px;
-  }
 
 /*
  *Para quitar las flechitas de seleccion de numero
